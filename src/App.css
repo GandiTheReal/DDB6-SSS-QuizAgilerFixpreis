@@ -10,9 +10,18 @@
   padding: 0
 }
 
+@keyframes slideIn {
+  0% {
+    transform: translate(-100%);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+
 body {
-  background-color: #2a385c;
-  background-image: linear-gradient(320deg, hsl(215, 10%, 12%) 0% /* down */, hsl(215, 19%, 24%) /* up */ 100%);
+  background-color: #505750;
   font-family: var(--fonts-primary);
   font-size: 14px;
   margin: 0;
@@ -24,7 +33,11 @@ body {
   border-radius: 3px;
   box-shadow: 0 12px 16px rgba(0, 0, 0, .25);
   margin: 3rem auto;
-  max-width: 370px;
+  max-width: 90%;
+}
+
+.layout__banner img{
+  width: 100%;
 }
 
 .card {
@@ -38,6 +51,84 @@ body {
   padding-bottom: 10px;
   margin-bottom: 5px;
 }
+
+.header__h1 {
+  padding-top: 200px;
+  margin: 0 auto;
+  font-size: 7em;
+  letter-spacing: 22px;
+  position: absolute;
+  width: 90%;
+  text-align: center;
+  color: white;
+  animation: slideIn 1s ease-out;
+}
+
+.header__h1wrapp {
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+.section__one p {
+  font-size: 1.5em;
+  letter-spacing: 2px;
+  padding: 20px 0px;
+  text-align: center;
+  animation: slideIn 1s ease;
+}
+
+.section__two {
+  padding-top: 40px;
+  text-align: center;
+}
+.section__two h2 {
+  text-align: center;
+  font-size: 3em;
+  color: #4f4f4f;
+  font-weight: 800;
+  letter-spacing: 4px;
+  padding-bottom: 20px;
+}
+
+.section__two button {
+  background: #946128;
+  color: white;
+  padding: 20px 50px;
+  font-size: 2em;
+  border: 0px;
+  letter-spacing: 3px;
+  border-radius: 10px;
+}
+
+.question__one, .question__three, .question__five {
+  margin-right: 4%;
+}
+.question__one, .question__two, .question__three, .question__four, .question__five, .question__six{
+  width: 48%;
+  display: inline-block;
+  padding: 20px;
+  background: #505750;
+  height: 250px;
+  border-radius: 10px;
+  color: white;
+  font-size: 1.3em;
+  letter-spacing: 4px;
+  box-shadow: 0px 0px 8px #505750;
+  margin-bottom: 60px;
+}
+
+.questions p{
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.options label{
+  display: block;
+  margin-bottom: 4px;
+}
+
 
 .store-container {
   text-align: center;

@@ -36,6 +36,48 @@ const DATA = [
   },
 ];
 
+const handleSubmitQuiz = () => {
+  const selectedOptions = {};
+
+  // Retrieve user selections from the DOM
+  const selectedInputs = document.querySelectorAll('input[type="radio"]:checked');
+  selectedInputs.forEach(input => {
+    const questionId = input.getAttribute('data-question-id');
+    const selectedOption = input.value;
+    selectedOptions[questionId] = selectedOption;
+  });
+
+  // Calculate the final result based on user selections
+  const result = {
+    selectedOptions: selectedOptions
+    // You can add more properties to the result object if needed
+  };
+  var scoring = 0;
+  if(
+    result.selectedOptions[0] == 'option1' 
+  ) {
+    scoring += 10;
+  }
+  if(result.selectedOptions[1] == 'option2')
+  {
+    scoring +=10;
+  }
+  if(result.selectedOptions[2] == 'option3')
+  {
+    result +=10;
+  }
+  if(result.selectedOptions[3] == 'option1')
+  {
+    result +=10;
+  }
+  if(result.selectedOptions[4] == 'option2'){
+    result += 10;
+  }
+  // Log the result to the console (you can do other actions like sending it to a server)
+  console.log(result);
+};
+
+
 function App() {
   const [stores, setStores] = useState(DATA)
 
@@ -92,57 +134,118 @@ function App() {
   return (
       <div className="layout__wrapper">
         <div className="card">
-          <DragDropContext onDragEnd = {handleDragDrop}>
           <div className="header">
-            <h1>Shopping List</h1>
+            <div class="header__h1wrapp"><h1 class="header__h1">Agiler Fixpreis Quiz</h1></div>
+            <div class="layout__banner">
+              <img src="./images/agile3.png"/>
+            </div>
           </div>
-          <Droppable droppableId="ROOT" type="group">
-            {(provided) => (
-              <div {...provided.droppableProps} ref={provided.innerRef}>
-                {stores.map( (store, index) => (
-                  <Draggable draggableId={store.id} key={store.id} index={index}>
-                    {(provided) => (
-                      <div {...provided.dragHandleProps} {...provided.draggableProps} ref={provided.innerRef}>
-                        {/* <h3>{store.name}</h3> */}
-                        <StoreList {...store} />
-                      </div>
-                    )}
-                  </Draggable>
-                ))}
-              {provided.placeholder}
+          <div class="content">
+            <div class="section__one">
+              <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
+              sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem 
+              ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore 
+              magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata 
+              sanctus est Lorem ipsum dolor sit amet.
+              </p>
+            </div>
+          </div>
+          <div class="section__two">
+            <h2>Please fill in the quiz</h2>
+            <div class=" questions question__one" data-question-id="1">
+              <p>This is question 1</p>
+              <div class="options">
+                <label>
+                  <input type="radio" name="question1" value="option1" data-question-id="1"/>Option1
+                </label>
+                <label>
+                  <input type="radio" name="question1" value="option2" data-question-id="1"/>Option2
+                </label>
+                <label>
+                  <input type="radio" name="question1" value="option3" data-question-id="1"/>Option3
+                </label>
               </div>
-            )}
-          </Droppable>
-          </DragDropContext>
+            </div>
+            <div class="questions question__two" data-question-id="2">
+              <p>This is question 2</p>
+              <div class="options">
+                <label>
+                  <input type="radio" name="question2" value="option1" data-question-id="2"/>Option1
+                </label>
+                <label>
+                  <input type="radio" name="question2" value="option2" data-question-id="2"/>Option2
+                </label>
+                <label>
+                  <input type="radio" name="question2" value="option3" data-question-id="2"/>Option3                
+                </label>
+              </div>
+            </div>
+            <div class="questions question__three" data-question-id="3">
+              <p>This is question 3</p>
+              <div class="options">
+                <label>
+                  <input type="radio" name="question3" value="option1" data-question-id="3"/>Option1
+                </label>
+                <label>
+                  <input type="radio" name="question3" value="option2" data-question-id="3"/>Option2
+                </label>
+                <label>
+                  <input type="radio" name="question3" value="option3" data-question-id="3"/>Option3
+                </label>
+              </div>
+            </div>
+            <div class="questions question__four" data-question-id="4">
+              <p>This is question 4</p>
+              <div class="options">
+                <label>
+                  <input type="radio" name="question4" value="option1" data-question-id="4"/>Option1
+                </label>
+                <label>
+                  <input type="radio" name="question4" value="option2" data-question-id="4"/>Option2
+                </label>
+                <label>
+                  <input type="radio" name="question4" value="option3" data-question-id="4"/>Option3
+                </label>
+              </div>
+            </div>
+            <div class="questions question__five" data-question-id="5">
+              <p>This is question 5</p>
+              <div class="options">
+                <label>
+                  <input type="radio" name="question5" value="option1" data-question-id="5"/>Option1
+                </label>
+                <label>
+                  <input type="radio" name="question5" value="option2" data-question-id="5"/>Option2
+                </label>
+                <label>
+                  <input type="radio" name="question5" value="option3" data-question-id="5"/>Option3
+                </label>
+              </div>
+            </div>
+            <div class="questions question__six" data-question-id="6">
+              <p>This is question 6</p>
+              <div class="options">
+                <label>
+                  <input type="radio" name="question6" value="option1" data-question-id="6"/>Option1
+                </label>
+                <label>
+                  <input type="radio" name="question6" value="option2" data-question-id="6"/>Option2
+                </label>
+                <label>
+                  <input type="radio" name="question6" value="option3" data-question-id="6"/>Option3
+                </label>
+              </div>
+            </div>
+            <button onClick={handleSubmitQuiz}>Submit Quiz</button>
+          </div>
         </div>
       </div>
   );
+
+  
 }
 
-function StoreList({name, items, id}){
-  return (
-      <Droppable droppableId={id}>
-        {(provided) => (
-            <div {...provided.droppableProps} ref={provided.innerRef}>
-              <div className="store-container">
-                <h3>{name}</h3>
-              </div>
-              <div className="items-container">
-                {items.map((item, index) => (
-                  <Draggable draggableId={item.id} key={item.id} index={index}>
-                    {(provided) => (
-                        <div className="item-container" {...provided.dragHandleProps} {...provided.draggableProps} ref={provided.innerRef}>
-                          <h4>{item.name} x {item.amount}</h4>
-                        </div>
-                    )}
-                  </Draggable>
-                ))}
-              </div>
-              {provided.placeholder}
-            </div>
-        )}
-      </Droppable>
-  )
-}
+
 
 export default App;
