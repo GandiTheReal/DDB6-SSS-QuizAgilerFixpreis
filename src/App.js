@@ -1,7 +1,19 @@
 import './App.css';
-import { v4 as uuidv4 } from 'uuid';
-import { useState } from "react";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd"
+import { Document, Page, Text, View, StyleSheet, PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
+import ReactDOMServer from 'react-dom/server';
+
+const styles = StyleSheet.create({
+  page: {
+    flexDirection: 'row',
+    backgroundColor: '#E4E4E4',
+  },
+  section: {
+    margin: 10,
+    padding: 10,
+    flexGrow: 1,
+  },
+});
+
 
 
 const DATA = [
@@ -53,85 +65,196 @@ const handleSubmitQuiz = () => {
     // You can add more properties to the result object if needed
   };
   var scoring = 0;
+  var extrabonus = false;
   if(
-    result.selectedOptions[0] == 'option1' 
+    result.selectedOptions[1] === 'option1' 
   ) {
-    scoring += 10;
+    scoring += 20;
   }
-  if(result.selectedOptions[1] == 'option2')
+  if(result.selectedOptions[2] === 'option2')
   {
-    scoring +=10;
+    scoring +=20;
   }
-  if(result.selectedOptions[2] == 'option3')
+  if(result.selectedOptions[3] === 'option3')
   {
-    result +=10;
+    scoring +=20;
   }
-  if(result.selectedOptions[3] == 'option1')
+  if(result.selectedOptions[4] === 'option1')
   {
-    result +=10;
+    scoring +=20;
   }
-  if(result.selectedOptions[4] == 'option2'){
-    result += 10;
+  if(result.selectedOptions[5] === 'option2'){
+    scoring += 20;
   }
-  // Log the result to the console (you can do other actions like sending it to a server)
+  if(result.selectedOptions[6] === 'option3'){
+    extrabonus = true
+  }
+  const img1 = document.getElementById('img1');
+  const img2 = document.getElementById('img2');
+  const img3 = document.getElementById('img3');
+  const img4 = document.getElementById('img4');
+  const img5 = document.getElementById('img5');
+  const img6 = document.getElementById('img6');
+  img1.style.display = 'none';
+  img2.style.display = 'none';
+  img3.style.display = 'none';
+  img4.style.display = 'none';
+  img5.style.display = 'none';
+  img6.style.display = 'none';
+
+  const bonusElement = document.getElementById('bonus');
+  const extraBonusElement = document.getElementById('extrabonus');
+  bonusElement.style.display = 'none';
+  if(scoring == 0){
+    img1.style.display = 'block';
+    img1.scrollIntoView({ behavior: 'smooth' });
+  }
+  else if(scoring == 20){
+    img2.style.display = 'block';
+    img2.scrollIntoView({ behavior: 'smooth' });
+  }
+  else if(scoring == 40){
+    img3.style.display = 'block';
+    img3.scrollIntoView({ behavior: 'smooth' });
+  }
+  else if(scoring == 60){
+    img4.style.display = 'block';
+    img4.scrollIntoView({ behavior: 'smooth' });
+  }
+  else if(scoring == 80){
+    img5.style.display = 'block';
+    img5.scrollIntoView({ behavior: 'smooth' });
+  }
+  else if(scoring == 100){
+    img6.style.display = 'block';
+    img6.scrollIntoView({ behavior: 'smooth' });
+  }
+
+  extraBonusElement.style.display = 'none';
+  if(scoring >= 60){
+    bonusElement.style.display = 'block';
+    if(extrabonus == true){
+      extraBonusElement.style.display = 'block';
+    }
+  }
+
+};
+
+const handleCalculationAgile = () => {
+  // Retrieve user selections from the DOM
+  const selectedOptionsPrice = {};
+  const selectedInputs = document.querySelectorAll('input[type="radio"]:checked');
+  selectedInputs.forEach(input => {
+    const questionId = input.getAttribute('data-question-id-price');
+    const selectedOptionPrice = input.value;
+    selectedOptionsPrice[questionId] = selectedOptionPrice;
+  });
+
+  // Calculate the final result based on user selections
+  const result = {
+    selectedOptionsPrice: selectedOptionsPrice
+    // You can add more properties to the result object if needed
+  };
+
+  var priceOpt1 = 0;
+  var priceOpt2 = 0;
+  var priceOpt3 = 0;
+  var priceOpt4 = 0;
   console.log(result);
+  if(
+    result.selectedOptionsPrice[1] === 'option1' 
+  ) {
+    priceOpt1 = 1000;
+  }
+  if(result.selectedOptionsPrice[1] === 'option2')
+  {
+    priceOpt1 = 2000;
+  }
+  if(result.selectedOptionsPrice[1] === 'option3')
+  {
+    priceOpt1 = 4000;
+  }
+  if(result.selectedOptionsPrice[2] === 'option1')
+  {
+    priceOpt2 = 2000;
+  }
+  if(result.selectedOptionsPrice[2] === 'option2'){
+    priceOpt2 = 0;
+  }
+  if(result.selectedOptionsPrice[3] === 'option1'){
+    priceOpt3 = 0
+  }
+  if(result.selectedOptionsPrice[3] === 'option2'){
+    priceOpt3 = 1000
+  }
+  if(result.selectedOptionsPrice[3] === 'option3'){
+    priceOpt3 = 2500
+  }
+  if(result.selectedOptionsPrice[3] === 'option4'){
+    priceOpt3 = 4500
+  }
+  if(result.selectedOptionsPrice[4] === 'option1'){
+    priceOpt4 = 0
+  }
+  if(result.selectedOptionsPrice[4] === 'option2'){
+    priceOpt4 = 1000
+  }
+  if(result.selectedOptionsPrice[4] === 'option3'){
+    priceOpt4 = 2000
+  }
+  var resultPrice = priceOpt1 + priceOpt2 + priceOpt3 + priceOpt4;
+  const priceResultElement = document.getElementById('priceresult');
+  priceResultElement.innerHTML = `<p>Your fix price agile is around: ${JSON.stringify(resultPrice)}€</p>`;
+  priceResultElement.scrollIntoView({ behavior: 'smooth' });
 };
 
 
+
+
+
+
 function App() {
-  const [stores, setStores] = useState(DATA)
+  const MyDocument = ({companyValue}) => (
+  <Document>
+    <Page size="A4" style={styles.page}>
+      <View style={styles.section}>
+        <Text>Company: {companyValue}</Text>
+      </View>
+      <View style={styles.section}>
+        <Text>Section #2</Text>
+      </View>
+    </Page>
+  </Document>
+  );
 
-  const handleDragDrop = (results) => {
-    console.log("Hallo", results);
+const handlePrintContract = async () => {
+  const companyInput = document.querySelector('input[name="company"]');
+  const companyValue = companyInput.value;
 
-    const { source, destination, type } = results;
+  const pdfViewer = (
+    <PDFViewer width="100%" height="100%">
+      <MyDocument companyValue={companyValue}/>
+    </PDFViewer>
+  );
 
-    if(!destination) return;
+  const pdfContent = ReactDOMServer.renderToString(pdfViewer);
 
-    if(source.droppableId === destination.droppableId &&
-        source.index === destination.index)
-      return;
+  const container = document.createElement('div');
+  container.innerHTML = pdfContent;
 
-    if(type === 'group'){
-      const reorderedStores = [...stores];
-      const sourceIndex = source.index;
-      const destinationIndex = destination.index;
-
-      const [removedStore] = reorderedStores.splice(sourceIndex, 1);
-
-      reorderedStores.splice(destinationIndex, 0, removedStore)
-
-      return setStores(reorderedStores);
-    }
-
-    console.log({destination, source})
-
-    const storeSourceIndex = stores.findIndex((store) => store.id === source.droppableId);
-    const storeDestinationIndex = stores.findIndex((store) => store.id === destination.droppableId);
-
-    const newSourceItems = [...stores[storeSourceIndex].items]
-    const newDestinationItems = source.droppableId !== destination.droppableId ? [...stores[storeDestinationIndex].items] : newSourceItems;
-
-    const [removedItem] = newSourceItems.splice(source.index, 1)
-    newDestinationItems.splice(destination.index, 0, removedItem)
-
-    const newStores = [...stores]
-
-    newStores[storeSourceIndex] = {
-      ...stores[storeSourceIndex],
-      items: newSourceItems
-    }
-
-    newStores[storeDestinationIndex] = {
-      ...stores[storeDestinationIndex],
-      items: newDestinationItems
-    }
-
-    setStores(newStores)
+  try {
+    document.body.appendChild(container);
+    await new Promise(resolve=>setTimeout(resolve, 1000));
+    window.print()
+  }
+  catch(error){
+    console.error('error generating pdf', error);
+    document.body.removeChild(container);
   }
 
-
+};
   return (
+
       <div className="layout__wrapper">
         <div className="card">
           <div className="header">
@@ -149,6 +272,37 @@ function App() {
               magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata 
               sanctus est Lorem ipsum dolor sit amet.
               </p>
+              <div class="video">
+                Video here
+              </div>
+              <div class="matrix">
+              <table>
+                <tr>
+                  <th></th>
+                  <th scope="col">header1</th>
+                  <th scope="col">header2</th>
+                  <th scope="col">header3</th>
+                </tr>
+                <tr>
+                  <th scope="row">header 1</th>
+                  <td class="green">✓</td>
+                  <td class="red">x</td>
+                  <td class="green">✓</td>
+                </tr>
+                <tr>
+                  <th scope="row">header 2</th>
+                  <td class="red">x</td>
+                  <td class="green">✓</td>
+                  <td class="red">x</td>
+                </tr>
+                <tr>
+                  <th scope="row">header 3</th>
+                  <td class="green">✓</td>
+                  <td class="red">x</td>
+                  <td class="red">x</td>
+                </tr>
+              </table>
+              </div>
             </div>
           </div>
           <div class="section__two">
@@ -239,11 +393,91 @@ function App() {
             </div>
             <button onClick={handleSubmitQuiz}>Submit Quiz</button>
           </div>
+          <div class="section__three">
+            <h2>Quiz results in %</h2>
+            <div id="results">
+              <img id="img1" src="./images/0.png"/>
+              <img id="img2" src="./images/20.png"/>
+              <img id="img3" src="./images/40.png"/>
+              <img id="img4" src="./images/60.png"/>
+              <img id="img5" src="./images/80.png"/>
+              <img id="img6" src="./images/100.png"/>
+            </div>
+          </div>
+          <div class="section__four" id="bonus">
+            <h2>You are given the possibility to calculate a fixed price agile project since you answered many questions right</h2>
+            <div class="calculation-questions calcquestion__one" data-question-id-price="1">
+              <p>How many masks do you have</p>
+              <div class="options">
+                <label>
+                  <input type="radio" name="question1" value="option1" data-question-id-price="1"/>Around 5
+                </label>
+                <label>
+                  <input type="radio" name="question1" value="option2" data-question-id-price="1"/>Around 10
+                </label>
+                <label>
+                  <input type="radio" name="question1" value="option3" data-question-id-price="1"/>Around 20
+                </label>
+              </div>
+            </div>
+            <div class="calculation-questions calcquestion__two" data-question-id-price="2">
+              <p>Do you have a template design?</p>
+              <div class="options">
+                <label>
+                  <input type="radio" name="calcquestion2" value="option1" data-question-id-price="2"/>No please include it in price
+                </label>
+                <label>
+                  <input type="radio" name="calcquestion2" value="option2" data-question-id-price="2"/>Yes, please no effort required
+                </label>
+              </div>
+            </div>
+            <div class="calculation-questions calcquestion__three" data-question-id-price="3">
+              <p>Does the webapp require external middleware connections?</p>
+              <div class="options">
+                <label>
+                  <input type="radio" name="calcquestion3" value="option1" data-question-id-price="3"/>No
+                </label>
+                <label>
+                  <input type="radio" name="calcquestion3" value="option2" data-question-id-price="3"/>Yes, around 1 external connection
+                </label>
+                <label>
+                  <input type="radio" name="calcquestion3" value="option3" data-question-id-price="3"/>Yes, around 3 external connection
+                </label>
+                <label>
+                  <input type="radio" name="calcquestion3" value="option4" data-question-id-price="3"/>Yes, more then 5 external connection
+                </label>
+              </div>
+            </div>
+            <div class="calculation-questions calcquestion__four" data-question-id-price="4">
+              <p>Does the webapp require accesibility implementation?</p>
+              <div class="options">
+                <label>
+                  <input type="radio" name="calcquestion4" value="option1" data-question-id-price="4"/>No
+                </label>
+                <label>
+                  <input type="radio" name="calcquestion4" value="option2" data-question-id-price="4"/>Yes, midd level
+                </label>
+                <label>
+                  <input type="radio" name="calcquestion4" value="option3" data-question-id-price="4"/>Yes, expert level
+                </label>
+              </div>
+            </div>
+            <button onClick={handleCalculationAgile}>Calculate Fix Price</button>
+            <div id="priceresult"></div>
+          </div>
+          <div class="section__five" id="extrabonus">
+            <h2>You answered the bonus question correctly</h2>
+            <div class="section__fivewrapp">
+              <h3>You get the possibility of printing your own non binding contract here</h3>
+              <label>Please add your company name</label>
+                    <input type="test" name="company"/>
+              <button onClick={handlePrintContract}>Print contract</button>
+            </div>
+
+          </div>
         </div>
       </div>
-  );
-
-  
+  );  
 }
 
 

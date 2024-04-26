@@ -78,7 +78,7 @@ body {
   animation: slideIn 1s ease;
 }
 
-.section__two {
+.section__two, .section__four, .section__five {
   padding-top: 40px;
   text-align: center;
 }
@@ -91,7 +91,7 @@ body {
   padding-bottom: 20px;
 }
 
-.section__two button {
+.section__two button, .section__four button {
   background: #946128;
   color: white;
   padding: 20px 50px;
@@ -99,12 +99,19 @@ body {
   border: 0px;
   letter-spacing: 3px;
   border-radius: 10px;
+  cursor: pointer;
 }
 
-.question__one, .question__three, .question__five {
+.section__two button:hover {
+  background: #5c3c18;
+}
+
+.question__one, .question__three, .question__five,
+.calcquestion__one, .calcquestion__three {
   margin-right: 4%;
 }
-.question__one, .question__two, .question__three, .question__four, .question__five, .question__six{
+.question__one, .question__two, .question__three, .question__four, .question__five, .question__six,
+.calcquestion__one, .calcquestion__two, .calcquestion__three, .calcquestion__four{
   width: 48%;
   display: inline-block;
   padding: 20px;
@@ -118,7 +125,18 @@ body {
   margin-bottom: 60px;
 }
 
-.questions p{
+.calcquestion__one, .calcquestion__two, .calcquestion__three, .calcquestion__four{
+  width: 100%;
+  background: #9462289a;
+  height: auto;
+  text-align: left;
+}
+
+.calcquestion__two, .calcquestion__four {
+  background: #505750ab;
+}
+
+.questions p, .calculation-questions p{
   font-size: 1.3em;
   font-weight: bold;
   margin-bottom: 10px;
@@ -127,8 +145,104 @@ body {
 .options label{
   display: block;
   margin-bottom: 4px;
+  cursor: pointer;
 }
 
+
+.section__three h2, .section__four h2, .section__five h2 {
+  border-top: 1px solid gray;
+  padding-top: 15px;
+  text-align: center;
+  font-size: 3em;
+  color: #4f4f4f;
+  font-weight: 800;
+  margin-top: 65px;
+}
+
+.section__four h2, .section__five h2 {
+  font-size: 2em;
+  padding-bottom: 20px;
+}
+
+#results {
+  background: #ecf0f1;
+  min-height: 325px;
+}
+
+#results img {
+  display: none;
+  margin: 0 auto;
+}
+#extrabonus, #bonus {
+  display: none;
+}
+
+#priceresult p {
+  font-size: 4em;
+  color: #505750;
+  font-weight: bold;
+  letter-spacing: 3px;
+  margin-top: 35px;
+  background: #ecf0f1;
+  padding: 32px;
+}
+
+.section__fivewrapp {
+  background: #ecf0f1;
+  border-radius: 10px;
+  padding: 30px;
+}
+
+.section__fivewrapp h3 {
+  font-size: 1.3em;
+  padding-bottom: 18px;
+  color: #353535;
+  letter-spacing: 3px;
+} 
+
+.section__fivewrapp label {
+  font-size: 1.3em;
+  padding-bottom: 18px;
+  color: #353535;
+  letter-spacing: 3px;
+} 
+
+.section__fivewrapp input {
+  padding: 10px;
+  margin-left: 13px;
+  background: #5057503d;
+  border: 0px;
+  border-radius: 10px;
+  width: 300px;
+}
+
+.section__fivewrapp button {
+  margin-left: 15px;
+  border: 0px;
+  background: #505750;
+  padding: 9px;
+  border-radius: 10px;
+  color: white;
+  letter-spacing: 2px;
+}
+
+table {
+  margin-top: 40px;
+  width: 100%;
+  font-size: 2.5em;
+  background: #ecf0f1;
+  padding: 30px 0px 47px 0px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: 900;
+}
+.green {
+  color: rgb(4, 99, 4);
+}
+
+.red {
+  color: rgb(145, 37, 37);
+}
 
 .store-container {
   text-align: center;
