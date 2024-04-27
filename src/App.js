@@ -171,13 +171,9 @@ const handleCalculationAgile = () => {
   }
   var resultPrice = priceOpt1 + priceOpt2 + priceOpt3 + priceOpt4;
   const priceResultElement = document.getElementById('priceresult');
-  priceResultElement.innerHTML = `<p>Your fix price agile is around: ${JSON.stringify(resultPrice)}€</p>`;
+  priceResultElement.innerHTML = `<p> Folgender Preis wird für das Projekt anfallen: ${JSON.stringify(resultPrice)}€</p>`;
   priceResultElement.scrollIntoView({ behavior: 'smooth' });
 };
-
-
-
-
 
 
 function App() {
@@ -273,24 +269,24 @@ const handlePrintContract = async () => {
           <div class="section__two">
             <h2>Bitte Ausfüllen, um einen Preis zu gewinnen!</h2>
             <div class=" questions question__one" data-question-id="1">
-              <p>This is question 1</p>
+              <p>Welches Vertragsmodell erlaubt einen agilen Funktionsumfang?</p>
               <div class="options">
                 <label>
-                  <input type="radio" name="question1" value="option1" data-question-id="1"/>Option1
+                  <input type="radio" name="question1" value="Festpreis" data-question-id="1"/>Option1
                 </label>
                 <label>
-                  <input type="radio" name="question1" value="option2" data-question-id="1"/>Option2
+                  <input type="radio" name="question1" value="Agiler Fixpreis" data-question-id="1"/>Option2
                 </label>
                 <label>
-                  <input type="radio" name="question1" value="option3" data-question-id="1"/>Option3
+                  <input type="radio" name="question1" value="Beide" data-question-id="1"/>Option3
                 </label>
               </div>
             </div>
             <div class="questions question__two" data-question-id="2">
-              <p>This is question 2</p>
+              <p>Welche Annahme liegt einem Projekt auf Basis des agilen Fixpreises zugrunde?</p>
               <div class="options">
                 <label>
-                  <input type="radio" name="question2" value="option1" data-question-id="2"/>Option1
+                  <input type="radio" name="question2" value="Budget ist dehnbahr" data-question-id="2"/>Option1
                 </label>
                 <label>
                   <input type="radio" name="question2" value="option2" data-question-id="2"/>Option2
@@ -356,7 +352,7 @@ const handlePrintContract = async () => {
                 </label>
               </div>
             </div>
-            <button onClick={handleSubmitQuiz}>Submit Quiz</button>
+            <button onClick={handleSubmitQuiz}>Quiz Abschließen</button>
           </div>
           <div class="section__three">
             <h2>Du bist % gut</h2>
@@ -375,13 +371,13 @@ const handlePrintContract = async () => {
               <p>Wie viele Masken gibt es im Projekt?</p>
               <div class="options">
                 <label>
-                  <input type="radio" name="question1" value="option1" data-question-id-price="1"/>Around 5
+                  <input type="radio" name="question1" value="option1" data-question-id-price="1"/>Circa 5
                 </label>
                 <label>
-                  <input type="radio" name="question1" value="option2" data-question-id-price="1"/>Around 10
+                  <input type="radio" name="question1" value="option2" data-question-id-price="1"/>Circa 10
                 </label>
                 <label>
-                  <input type="radio" name="question1" value="option3" data-question-id-price="1"/>Around 20
+                  <input type="radio" name="question1" value="option3" data-question-id-price="1"/>Circa 20
                 </label>
               </div>
             </div>
@@ -389,10 +385,10 @@ const handlePrintContract = async () => {
               <p>Hast du schon ein Design?</p>
               <div class="options">
                 <label>
-                  <input type="radio" name="calcquestion2" value="option1" data-question-id-price="2"/>No please include it in price
+                  <input type="radio" name="calcquestion2" value="option1" data-question-id-price="2"/>Nein bitte mitabschätzen
                 </label>
                 <label>
-                  <input type="radio" name="calcquestion2" value="option2" data-question-id-price="2"/>Yes, please no effort required
+                  <input type="radio" name="calcquestion2" value="option2" data-question-id-price="2"/>Ja, muss nicht eingepreist sein
                 </label>
               </div>
             </div>
@@ -400,16 +396,16 @@ const handlePrintContract = async () => {
               <p>Brauchst du Schnittstellen?</p>
               <div class="options">
                 <label>
-                  <input type="radio" name="calcquestion3" value="option1" data-question-id-price="3"/>No
+                  <input type="radio" name="calcquestion3" value="option1" data-question-id-price="3"/>Nein
                 </label>
                 <label>
-                  <input type="radio" name="calcquestion3" value="option2" data-question-id-price="3"/>Yes, around 1 external connection
+                  <input type="radio" name="calcquestion3" value="option2" data-question-id-price="3"/>Ja, circa eine
                 </label>
                 <label>
-                  <input type="radio" name="calcquestion3" value="option3" data-question-id-price="3"/>Yes, around 3 external connection
+                  <input type="radio" name="calcquestion3" value="option3" data-question-id-price="3"/>Ja, circa drei
                 </label>
                 <label>
-                  <input type="radio" name="calcquestion3" value="option4" data-question-id-price="3"/>Yes, more then 5 external connection
+                  <input type="radio" name="calcquestion3" value="option4" data-question-id-price="3"/>Ja, fünf oder mehr
                 </label>
               </div>
             </div>
@@ -417,17 +413,17 @@ const handlePrintContract = async () => {
               <p>Brauchst du Accessibility-Stuff?</p>
               <div class="options">
                 <label>
-                  <input type="radio" name="calcquestion4" value="option1" data-question-id-price="4"/>No
+                  <input type="radio" name="calcquestion4" value="option1" data-question-id-price="4"/>Nein
                 </label>
                 <label>
-                  <input type="radio" name="calcquestion4" value="option2" data-question-id-price="4"/>Yes, midd level
+                  <input type="radio" name="calcquestion4" value="option2" data-question-id-price="4"/>Ja, AA
                 </label>
                 <label>
-                  <input type="radio" name="calcquestion4" value="option3" data-question-id-price="4"/>Yes, expert level
+                  <input type="radio" name="calcquestion4" value="option3" data-question-id-price="4"/>Ja, AAA
                 </label>
               </div>
             </div>
-            <button onClick={handleCalculationAgile}>Calculate Fix Price</button>
+            <button onClick={handleCalculationAgile}>Preisberechnung</button>
             <div id="priceresult"></div>
           </div>
           <div class="section__five" id="extrabonus">
