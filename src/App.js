@@ -254,7 +254,7 @@ const handlePrintContract = async () => {
 
 };
   return (
-
+// Content-Section with Information for the user 
       <div className="layout__wrapper">
         <div className="card">
           <div className="header">
@@ -266,47 +266,45 @@ const handlePrintContract = async () => {
           <div class="content">
             <div class="section__one">
               <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, 
-              sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem 
-              ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore 
-              magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata 
-              sanctus est Lorem ipsum dolor sit amet.
+             Der Agile Fixpreis ist ein Vertragskonzept in der agilen Softwareentwicklung. Er zeichnet sich dadurch aus, dass am Anfang allen Parteien bekannt ist,  
+             dass die Funktionalitäten nicht vollkommen ausdefiniert sind. Trotzdem steht das Budget fest. Im Gegensatz dazu gibt es den Fixpreis, welcher 
+             davon ausgeht, dass die Funktionalitäten perfekt definiert sind. Da Funktionalitäten in Software-Projekten vor dem Projekt in der Praxis nie 
+             vollkommen sind, führt das im Laufe des Projektes zu vielen notwendigen Abstimmungen - so genannten Claim Management Meetings. 
+             Der Agile Fixpreis geht damit anders um - es gibt ein (Stunden)Budget pro Feature, und alle Funktionalitäten, die sich in diesem Stundenkontingent
+             ausgehen, können ohne Zusatzkosten realisiert werden. Falls es Funktionalitäten gibt, die über das Stundenbudget hinausgehen, können diese
+             entweder auf Kosten von zusätzlichen Funktionalitäten aus einem anderen Feature oder durch eine Zusatzbestellung umgesetzt werden.  
               </p>
-              <div class="video">
+              <div class="video"> 
                 Video here
               </div>
               <div class="matrix">
               <table>
                 <tr>
                   <th></th>
-                  <th scope="col">header1</th>
-                  <th scope="col">header2</th>
-                  <th scope="col">header3</th>
+                  <th scope="col">Agiler Fixpreis</th>
+                  <th scope="col"> Festpreis</th>
                 </tr>
                 <tr>
-                  <th scope="row">header 1</th>
-                  <td class="green">✓</td>
-                  <td class="red">x</td>
-                  <td class="green">✓</td>
-                </tr>
-                <tr>
-                  <th scope="row">header 2</th>
-                  <td class="red">x</td>
+                  <th scope="row">Zusatz-Funktionen möglich</th>
                   <td class="green">✓</td>
                   <td class="red">x</td>
                 </tr>
                 <tr>
-                  <th scope="row">header 3</th>
+                  <th scope="row">Fixes Budget</th>
                   <td class="green">✓</td>
-                  <td class="red">x</td>
-                  <td class="red">x</td>
+                  <td class="green">✓</td>
+                </tr>
+                <tr>
+                  <th scope="row">Fixe Timeline</th>
+                  <td class="green">✓</td>
+                  <td class="green">✓</td>
                 </tr>
               </table>
               </div>
             </div>
           </div>
           <div class="section__two">
-            <h2>Please fill in the quiz</h2>
+            <h2>Bitte Ausfüllen, um einen Preis zu gewinnen!</h2>
             <div class=" questions question__one" data-question-id="1">
               <p>This is question 1</p>
               <div class="options">
@@ -394,7 +392,7 @@ const handlePrintContract = async () => {
             <button onClick={handleSubmitQuiz}>Submit Quiz</button>
           </div>
           <div class="section__three">
-            <h2>Quiz results in %</h2>
+            <h2>Du bist % gut</h2>
             <div id="results">
               <img id="img1" src="./images/0.png"/>
               <img id="img2" src="./images/20.png"/>
@@ -405,9 +403,9 @@ const handlePrintContract = async () => {
             </div>
           </div>
           <div class="section__four" id="bonus">
-            <h2>You are given the possibility to calculate a fixed price agile project since you answered many questions right</h2>
+            <h2>Glückwunsch, du bist so gut, du bekommst ein Goodie!</h2>
             <div class="calculation-questions calcquestion__one" data-question-id-price="1">
-              <p>How many masks do you have</p>
+              <p>Wie viele Masken gibt es im Projekt?</p>
               <div class="options">
                 <label>
                   <input type="radio" name="question1" value="option1" data-question-id-price="1"/>Around 5
@@ -421,7 +419,7 @@ const handlePrintContract = async () => {
               </div>
             </div>
             <div class="calculation-questions calcquestion__two" data-question-id-price="2">
-              <p>Do you have a template design?</p>
+              <p>Hast du schon ein Design?</p>
               <div class="options">
                 <label>
                   <input type="radio" name="calcquestion2" value="option1" data-question-id-price="2"/>No please include it in price
@@ -432,7 +430,7 @@ const handlePrintContract = async () => {
               </div>
             </div>
             <div class="calculation-questions calcquestion__three" data-question-id-price="3">
-              <p>Does the webapp require external middleware connections?</p>
+              <p>Brauchst du Schnittstellen?</p>
               <div class="options">
                 <label>
                   <input type="radio" name="calcquestion3" value="option1" data-question-id-price="3"/>No
@@ -449,7 +447,7 @@ const handlePrintContract = async () => {
               </div>
             </div>
             <div class="calculation-questions calcquestion__four" data-question-id-price="4">
-              <p>Does the webapp require accesibility implementation?</p>
+              <p>Brauchst du Accessibility-Stuff?</p>
               <div class="options">
                 <label>
                   <input type="radio" name="calcquestion4" value="option1" data-question-id-price="4"/>No
@@ -466,12 +464,12 @@ const handlePrintContract = async () => {
             <div id="priceresult"></div>
           </div>
           <div class="section__five" id="extrabonus">
-            <h2>You answered the bonus question correctly</h2>
+            <h2>Du hast auch den Bonus richtig beantwortet, super! </h2>
             <div class="section__fivewrapp">
-              <h3>You get the possibility of printing your own non binding contract here</h3>
-              <label>Please add your company name</label>
+              <h3>Jetzt kannst du deinen individuellen Agiler-Aixpreis-Vertrag erstellen!</h3>
+              <label>Firmenname:</label>
                     <input type="test" name="company"/>
-              <button onClick={handlePrintContract}>Print contract</button>
+              <button onClick={handlePrintContract}>Vertrag Drucken</button>
             </div>
 
           </div>
