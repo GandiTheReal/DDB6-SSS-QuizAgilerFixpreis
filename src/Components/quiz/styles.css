@@ -27,6 +27,9 @@
   letter-spacing: 3px;
   border-radius: 10px;
   cursor: pointer;
+  @media (max-width: 767px){
+    font-size: 1em;
+  }
 }
 
 .section__two button:hover {
@@ -63,6 +66,10 @@
   box-shadow: 0px 0px 8px #505750;
   margin-bottom: 60px;
   text-align: left;
+  @media (max-width: 767px){
+    height: 200px;
+    margin-bottom: 20px;;
+  }
 }
 
 .calcquestion__one,
@@ -86,7 +93,7 @@
   font-weight: bold;
   margin-bottom: 10px;
   @media (max-width: 767px){
-    font-size: 1em;
+    font-size: 0.8em;
   }
 }
 
@@ -94,6 +101,9 @@
   display: block;
   margin-bottom: 4px;
   cursor: pointer;
+  @media (max-width: 767px){
+    font-size: 0.6em;
+  }
 }
 
 
@@ -107,6 +117,9 @@
   color: #4f4f4f;
   font-weight: 800;
   margin-top: 65px;
+  @media (max-width: 767px){
+    font-size: 2em;
+  }
 }
 
 .section__four h2,
@@ -173,6 +186,9 @@
   border: 0px;
   border-radius: 10px;
   width: 300px;
+  @media (max-width: 767px){
+    width: 215px;
+  }
 }
 
 .section__fivewrapp button {
@@ -183,4 +199,7 @@
   border-radius: 10px;
   color: white;
   letter-spacing: 2px;
+  @media (max-width: 767px){
+    margin-top: 20px;
+  }
 }

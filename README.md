@@ -20,7 +20,12 @@ Goodie two is a contract-printer that allows the user to input their company nam
 7) Additional Info can be found
 
 ## Build With 
-1) 
+1) @react-pdf/renderer
+2) react
+3) react-dom
+4) react-router-dom
+5) react-scripts
+6) visual studio code as code editor 
 
 
 ## Known Issues

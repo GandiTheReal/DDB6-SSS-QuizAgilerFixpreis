@@ -7,7 +7,8 @@ export default function Homepage() {
     return (
 
 
-        /*Content-Section with Information for the user*/
+        /*Content-Section with Information for the user - in this section we display the main learning-content for the user with 
+        animated text, a video and a table comparing the two options*/
 
         <div className="layout__wrapper">
             <div className="card">

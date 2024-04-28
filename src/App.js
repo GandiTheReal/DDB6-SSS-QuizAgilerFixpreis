@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
   return (
+    // here i add routes so the Quiz can open in a new page
     <Router>
       <Routes>
         <Route path="/" element={<Homepage />} />

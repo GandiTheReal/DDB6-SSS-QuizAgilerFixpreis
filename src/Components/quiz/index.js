@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
     },
 });
 
-/* function to print the agile contract */
+/* in this fucntion i print the agile contract based upon the value from the pricecalculator & the company-input*/
 
 const handlePrintContract = async () => {
     const companyInput = document.querySelector('input[name="company"]');
@@ -45,6 +45,7 @@ const handlePrintContract = async () => {
     }
 
 };
+// here i format the document and add the important texts - didnt add more legal things because unsure if that would have consequences > This is not legal advice
 const MyDocument = ({ companyValue, priceOfferValue}) => (
     <Document>
         <Page size="A4" style={styles.page}>
@@ -60,7 +61,7 @@ const MyDocument = ({ companyValue, priceOfferValue}) => (
                 <Text> um den Scope genauer zu definieren. </Text>
                 <Text>                           </Text>
                 <Text>======================================</Text>
-                <Text> Weitere legal-texte einfuegen. </Text>
+                <Text> Dies stellt keine rechtsverbindliche Beartung dar. </Text>
                 <Text>                           </Text>
                 <Text>                           </Text>
                 <Text>======================================</Text>
@@ -126,6 +127,8 @@ const handleSubmitQuiz = () => {
     const bonusElement = document.getElementById('bonus');
     const extraBonusElement = document.getElementById('extrabonus');
     bonusElement.style.display = 'none';
+
+    //I showcase the result of the Quiz to the user with a nice image
     if (scoring == 0) {
         img1.style.display = 'block';
         img1.scrollIntoView({ behavior: 'smooth' });
@@ -151,6 +154,8 @@ const handleSubmitQuiz = () => {
         img6.scrollIntoView({ behavior: 'smooth' });
     }
 
+    /*If the user has more than 60 points he can see an additional element, the price-calculator & 
+    if the extrabonus-question was answered correctly the user can also print their own contract */ 
     extraBonusElement.style.display = 'none';
     if (scoring >= 60) {
         bonusElement.style.display = 'block';
@@ -161,7 +166,7 @@ const handleSubmitQuiz = () => {
 
 };
 
-//function to print a contract based on userinputs
+//Here I have the classic quiz with different questions and different answers
 export default function Quiz() {
 
     return (

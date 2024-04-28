@@ -9,7 +9,7 @@ const handleCalculationAgile = () => {
       selectedOptionsPrice[questionId] = selectedOptionPrice;
     });
   
-    // Calculate the final result based on user selections
+    // In this section i let the user select between different important factors for his project
 
     var priceOpt1 = 0;
     var priceOpt2 = 0;
@@ -63,6 +63,7 @@ const handleCalculationAgile = () => {
     if(selectedOptionsPrice[4] === 'option3'){
       priceOpt4 = 2000
     }
+
     var resultPrice = priceOpt1 + priceOpt2 + priceOpt3 + priceOpt4;
     const priceResultElement = document.getElementById('priceresult');
     priceResultElement.innerHTML = `<p> Folgender Preis wird für das Projekt anfallen: ${JSON.stringify(resultPrice)}€</p>`;
@@ -70,7 +71,7 @@ const handleCalculationAgile = () => {
   };
   
 
-//Function to calculate the approx price of an agile fixpreis project
+//In this function i calculate the approx price of an agile fixpreis project based upon user inputs
 export default function PriceCalculator(){
     
     return (
@@ -132,7 +133,8 @@ export default function PriceCalculator(){
             </label>
           </div>
         </div>
-        <button onClick={handleCalculationAgile}>Preisberechnung</button>
+        {/*Here I show the section with the price result based when the corresponding button is clicked */}
+        <button onClick={handleCalculationAgile}>Preisberechnung</button> 
         <div id="priceresult"></div>
       </div>
     );

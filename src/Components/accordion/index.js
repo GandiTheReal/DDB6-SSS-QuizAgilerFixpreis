@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import "./styles.css";
 
+/*In this section I create an FAQ-Accordion that the user can interact with to learn more information*/ 
 export default function Accordion() {
     useEffect(()=> {
         const accButtons = document.querySelectorAll('.accordion');

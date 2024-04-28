@@ -10,6 +10,9 @@
     border: none;
     outline: none;
     transition: 0.4s;
+    @media (max-width: 767px){
+        font-size: 1em;
+      }
 }
 
 .accordion-title {
@@ -18,6 +21,9 @@
     padding-bottom: 20px;
     font-size: 3em;
     color: #4f564f;
+    @media (max-width: 767px){
+        font-size: 2em;
+      }
 }
 .active,
 .accordion:hover {
