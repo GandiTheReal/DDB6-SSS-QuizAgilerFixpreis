@@ -12,12 +12,15 @@ Goodie two is a contract-printer that allows the user to input their company nam
 
 ## Getting Started/Installation-Manual:
 1) Download the Code from https://github.com/GandiTheReal/DDB6-SSS-QuizAgilerFixpreis
-2) Open with a Code-Editor of your choosing (was implemented with VS Code) 
-3) Run the terminal in the same folder
-4) Run "npm install" in the Terminal 
-5) Run "npm start" in the Terminal
-6) Make sure that the port is free 
-7) Additional Info can be found
+2) Install npm (https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+3) Open with a Code-Editor of your choosing (was implemented with VS Code) 
+4) Run the terminal in the same folder
+5) Run "npm install" in the Terminal
+6) Run "npm run build" in the Terminal
+7) Run "npm -g install serve" globally
+8) Run "serve -s build" in the Terminal
+10) Make sure that the port is free 
+11) Additional Info can be found
 
 ## Build With 
 1) @react-pdf/renderer
@@ -47,6 +50,7 @@ Goodie two is a contract-printer that allows the user to input their company nam
 1) Selection for max points in the Quiz is first answer > second answer > third answer 
 2) 60% and above shows the price-calculator 
 3) If the bonus-question is answered correctly, a "contract" is created for printing
+4) You can also run "npm start" in the Terminal to start the project
 
 
 
