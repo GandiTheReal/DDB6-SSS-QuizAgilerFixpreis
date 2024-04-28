@@ -34,6 +34,7 @@ Goodie two is a contract-printer that allows the user to input their company nam
 ## Known Issues
 1) Adblock-Extensions can create error-messages (example: "ERR_BLOCKED_BY_CLIENT" for Google Ads)
 2) A warning ("Error with Permissions-Policy header: Unrecognized feature: 'ch-ua-form-factor'.") comes direct from YouTube for the embedding of the video and should be ignored (Stackoverflow-Explanation: https://stackoverflow.com/questions/76313405/iframe-error-with-ch-ua-form-factor-cookie-permission)
+3) An additional warning ("Third-party cookie will be blocked. Learn more in the Issues tab.") can show based on the users browser-settings 
 
 ## Tested Browsers
 1) Google Chrome (Version 124.0.6367.61) > used also the simulator to test different mobile devices
