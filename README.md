@@ -33,7 +33,7 @@ Goodie two is a contract-printer that allows the user to input their company nam
 2) A warning ("Error with Permissions-Policy header: Unrecognized feature: 'ch-ua-form-factor'.") comes direct from YouTube for the embedding of the video and should be ignored (Stackoverflow-Explanation: https://stackoverflow.com/questions/76313405/iframe-error-with-ch-ua-form-factor-cookie-permission)
 
 ## Tested Browsers
-1) Google Chrome (Version 124.0.6367.61)
+1) Google Chrome (Version 124.0.6367.61) > used also the simulator to test different mobile devices
 2) Mozilla Firefox (Version 125.0.2)
 3) Microsoft Edge (Version 124.0.2478.51)
 
