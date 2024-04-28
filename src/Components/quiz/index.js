@@ -2,6 +2,7 @@ import "./styles.css";
 import PriceCalculator from '../pricecalculator';
 import { Document, Page, Text, View, StyleSheet, PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
 import ReactDOM from 'react-dom';
+import { createRoot } from "react-dom/client";
 
 const styles = StyleSheet.create({
     page: {
@@ -31,8 +32,10 @@ const handlePrintContract = async () => {
     );
 
     const printWindow = window.open("", "_blank");
-    ReactDOM.render(pdfViewer, printWindow.document.body);
-
+    const container = printWindow.document.createElement('div');
+    printWindow.document.body.appendChild(container);
+    const root = createRoot(container);
+    root.render(pdfViewer);
     try {
         await new Promise(resolve => setTimeout(resolve, 1000));
         printWindow.print()
@@ -87,7 +90,6 @@ const handleSubmitQuiz = () => {
     // Calculate the final result based on user selections
     var scoring = 0;
     var extrabonus = false;
-    console.log(selectedOptions)
     if (
         selectedOptions[1] === 'option1'
     ) {
@@ -273,9 +275,9 @@ export default function Quiz() {
 
                     <PriceCalculator />
 
-                    <div class="section__five" id="extrabonus">
+                    <div className="section__five" id="extrabonus">
                         <h2>Du hast auch den Bonus richtig beantwortet, super! </h2>
-                        <div class="section__fivewrapp">
+                        <div className="section__fivewrapp">
                             <h3>Jetzt kannst du deinen individuellen Agiler-Aixpreis-Vertrag erstellen!</h3>
                             <label>Firmenname:</label>
                             <input type="test" name="company" />
