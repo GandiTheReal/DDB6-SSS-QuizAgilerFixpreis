@@ -1,17 +1,41 @@
-## Installationsanleitung:
-1) Herunterladen des Codes von https://github.com/GandiTheReal/DDB6-SSS-QuizAgilerFixpreis
-2) Öffnen in einem Code-Editor der Wahl 
-3) Öffnen des Terminals im Editor im selben Folder 
-4) Ausführen von "npm install" im Terminal 
-5) Ausführen von "npm start" im Terminal
-6) Sicherstellen, dass der Port frei ist 
-7) Weitere Infos finden sich direkt unten im offiziellen React-Readme
+##Title 
+React-Based Agile Fixprice Quiz
+
+##Author
+Lorenz Moser
+mslorenz11@gmail.com
+
+##Projectdescription
+In this Project I implemented a simple E-Learning Application that has different ways of displaying content to the user (Animated Text, Video, Accordeon). After The Learning-Section there is a Quiz that checks if the user consumed all the knowledge. Based upon their result, the user can receive two "Goodies". 
+Goodie one is a calculator that helps the user to define how much their agile fixprice-project would approx. cost based on different factors such as the needed interfaces etc. 
+Goodie two is a contract-printer that allows the user to input their company name and prints a document with their company name and the price from Goode one. 
+
+## Getting Started/Installation-Manual:
+1) Download the Code from https://github.com/GandiTheReal/DDB6-SSS-QuizAgilerFixpreis
+2) Open with a Code-Editor of your choosing (was implemented with VS Code) 
+3) Run the terminal in the same folder
+4) Run "npm install" in the Terminal 
+5) Run "npm start" in the Terminal
+6) Make sure that the port is free 
+7) Additional Info can be found
+
+##Build With 
+1) 
+
 
 ## Known Issues
 1) Adblock-Extensions können Fehlermeldungen hervorrufen, z.b "ERR_BLOCKED_BY_CLIENT" für Google Ads
 2) Ein Warning ("Error with Permissions-Policy header: Unrecognized feature: 'ch-ua-form-factor'.") kommt direkt von YouTube bei der Einbettung vom Video (Stackoverflow-Erklärung: https://stackoverflow.com/questions/76313405/iframe-error-with-ch-ua-form-factor-cookie-permission)
 
-## Notes
+## Tested Browsers
+1) Google Chrome
+2) Mozilla Firefox
+
+## Learnings
+My main learning was, that trying to write all code in the main .js-file first and splitting it in components later is creating quite some overhead. Also, that while StackOverflow is a great source of information, code/etc from there has to be double checked and refactored before 
+Additionally i learned how to open new pages / work with Routers 
+
+## Additional Notes
 1) Auswahl beim Quiz ist 1erste Antwort > zweite Antwort > dritte Antwort für alle Punkte 
 2) Ab 60% bekommt man den Fixpreiskalkulator
 3) Bei richtiger Beantwortung der Bonus-Frage bekommt man einen "Vertrag" zu Ausdrucken
