@@ -20,7 +20,7 @@ Goodie two is a contract-printer that allows the user to input their company nam
 7) Run "npm -g install serve" globally
 8) Run "serve -s build" in the Terminal
 10) Make sure that the port is free 
-11) Additional Info can be found
+11) Additional Info can be found below in the standard-react-app-readme
 
 ## Build With 
 1) @react-pdf/renderer
