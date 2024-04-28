@@ -1,11 +1,11 @@
-#Title 
-React-Based Agile Fixprice Quiz
+# Title 
+**React-Based Agile Fixprice Quiz**
 
-##Author
+## Author
 Lorenz Moser
 mslorenz11@gmail.com
 
-##Projectdescription
+## Projectdescription
 In this Project I implemented a simple E-Learning Application that has different ways of displaying content to the user (Animated Text, Video, Accordeon). After The Learning-Section there is a Quiz that checks if the user consumed all the knowledge. Based upon their result, the user can receive two "Goodies". 
 Goodie one is a calculator that helps the user to define how much their agile fixprice-project would approx. cost based on different factors such as the needed interfaces etc. 
 Goodie two is a contract-printer that allows the user to input their company name and prints a document with their company name and the price from Goode one. 
@@ -19,7 +19,7 @@ Goodie two is a contract-printer that allows the user to input their company nam
 6) Make sure that the port is free 
 7) Additional Info can be found
 
-##Build With 
+## Build With 
 1) 
 
 
@@ -39,7 +39,12 @@ Additionally i learned how to open new pages / work with Routers
 ## Additional Notes
 1) Selection for max points in the Quiz is first answer > second answer > third answer 
 2) 60% and above shows the price-calculator 
-3) If the bonus-question is answered correctly, a "contract" is created for printing 
+3) If the bonus-question is answered correctly, a "contract" is created for printing
+
+
+
+
+
 
 # Getting Started with Create React App
 
