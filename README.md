@@ -40,7 +40,8 @@ Goodie two is a contract-printer that allows the user to input their company nam
 ## Learnings
 1) My main learning was, that trying to write all code in the main .js-file first and splitting it in components later is creating quite some overhead. 
 2) My second biggest learning was that while StackOverflow is a great source of information, code/knowledge from there has to be double checked and refactored before to fit the needs better
-3) Additionally i learned how to open new pages / work with Routers 
+3) Additionally i learned how to open new pages / work with Routers
+4) I also learned how to create PDFs using a library 
 
 ## Additional Notes
 1) Selection for max points in the Quiz is first answer > second answer > third answer 
