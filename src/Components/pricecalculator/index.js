@@ -1,7 +1,141 @@
 import "./styles.css";
-import { useState } from "react";
+
+const handleCalculationAgile = () => {
+    
+    // Retrieve user selections from the DOM
+    const selectedOptionsPrice = {};
+    const selectedInputs = document.querySelectorAll('input[type="radio"]:checked');
+    selectedInputs.forEach(input => {
+      const questionId = input.getAttribute('data-question-id-price');
+      const selectedOptionPrice = input.value;
+      selectedOptionsPrice[questionId] = selectedOptionPrice;
+    });
+  
+    // Calculate the final result based on user selections
+    const result = {
+      selectedOptionsPrice: selectedOptionsPrice
+      // You can add more properties to the result object if needed
+    };
+  
+    var priceOpt1 = 0;
+    var priceOpt2 = 0;
+    var priceOpt3 = 0;
+    var priceOpt4 = 0;
+    console.log(result);
+    if(
+      result.selectedOptionsPrice[1] === 'option1' 
+    ) {
+      priceOpt1 = 1000;
+    }
+    if(result.selectedOptionsPrice[1] === 'option2')
+    {
+      priceOpt1 = 2000;
+    }
+    if(result.selectedOptionsPrice[1] === 'option3')
+    {
+      priceOpt1 = 4000;
+    }
+    if(result.selectedOptionsPrice[2] === 'option1')
+    {
+      priceOpt2 = 2000;
+    }
+    if(result.selectedOptionsPrice[2] === 'option2'){
+      priceOpt2 = 0;
+    }
+    if(result.selectedOptionsPrice[3] === 'option1'){
+      priceOpt3 = 0
+    }
+    if(result.selectedOptionsPrice[3] === 'option2'){
+      priceOpt3 = 1000
+    }
+    if(result.selectedOptionsPrice[3] === 'option3'){
+      priceOpt3 = 2500
+    }
+    if(result.selectedOptionsPrice[3] === 'option4'){
+      priceOpt3 = 4500
+    }
+    if(result.selectedOptionsPrice[4] === 'option1'){
+      priceOpt4 = 0
+    }
+    if(result.selectedOptionsPrice[4] === 'option2'){
+      priceOpt4 = 1000
+    }
+    if(result.selectedOptionsPrice[4] === 'option3'){
+      priceOpt4 = 2000
+    }
+    var resultPrice = priceOpt1 + priceOpt2 + priceOpt3 + priceOpt4;
+    const priceResultElement = document.getElementById('priceresult');
+    priceResultElement.innerHTML = `<p> Folgender Preis wird für das Projekt anfallen: ${JSON.stringify(resultPrice)}€</p>`;
+    priceResultElement.scrollIntoView({ behavior: 'smooth' });
+  };
+  
+
+
 
 //Function to calculate the approx price of an agile fixpreis project
 export default function PriceCalculator(){
     
+    return (
+        <div class="section__four" id="bonus">
+        <h2>Glückwunsch, du bist so gut, du bekommst ein Goodie!</h2>
+        <div class="calculation-questions calcquestion__one" data-question-id-price="1">
+          <p>Wie viele Masken gibt es im Projekt?</p>
+          <div class="options">
+            <label>
+              <input type="radio" name="question1" value="option1" data-question-id-price="1"/>Circa 5
+            </label>
+            <label>
+              <input type="radio" name="question1" value="option2" data-question-id-price="1"/>Circa 10
+            </label>
+            <label>
+              <input type="radio" name="question1" value="option3" data-question-id-price="1"/>Circa 20
+            </label>
+          </div>
+        </div>
+        <div class="calculation-questions calcquestion__two" data-question-id-price="2">
+          <p>Hast du schon ein Design?</p>
+          <div class="options">
+            <label>
+              <input type="radio" name="calcquestion2" value="option1" data-question-id-price="2"/>Nein bitte mitabschätzen
+            </label>
+            <label>
+              <input type="radio" name="calcquestion2" value="option2" data-question-id-price="2"/>Ja, muss nicht eingepreist sein
+            </label>
+          </div>
+        </div>
+        <div class="calculation-questions calcquestion__three" data-question-id-price="3">
+          <p>Brauchst du Schnittstellen?</p>
+          <div class="options">
+            <label>
+              <input type="radio" name="calcquestion3" value="option1" data-question-id-price="3"/>Nein
+            </label>
+            <label>
+              <input type="radio" name="calcquestion3" value="option2" data-question-id-price="3"/>Ja, circa eine
+            </label>
+            <label>
+              <input type="radio" name="calcquestion3" value="option3" data-question-id-price="3"/>Ja, circa drei
+            </label>
+            <label>
+              <input type="radio" name="calcquestion3" value="option4" data-question-id-price="3"/>Ja, fünf oder mehr
+            </label>
+          </div>
+        </div>
+        <div class="calculation-questions calcquestion__four" data-question-id-price="4">
+          <p>Brauchst du Accessibility-Stuff?</p>
+          <div class="options">
+            <label>
+              <input type="radio" name="calcquestion4" value="option1" data-question-id-price="4"/>Nein
+            </label>
+            <label>
+              <input type="radio" name="calcquestion4" value="option2" data-question-id-price="4"/>Ja, AA
+            </label>
+            <label>
+              <input type="radio" name="calcquestion4" value="option3" data-question-id-price="4"/>Ja, AAA
+            </label>
+          </div>
+        </div>
+        <button onClick={handleCalculationAgile}>Preisberechnung</button>
+        <div id="priceresult"></div>
+      </div>
+    );
 };

@@ -1,6 +1,7 @@
 import './App.css';
 import { Document, Page, Text, View, StyleSheet, PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
 import ReactDOMServer from 'react-dom/server';
+import PriceCalculator from './Components/pricecalculator';
 
 const styles = StyleSheet.create({
   page: {
@@ -365,67 +366,9 @@ const handlePrintContract = async () => {
               <img id="img6" src="./images/100.png"/>
             </div>
           </div>
-          <div class="section__four" id="bonus">
-            <h2>Glückwunsch, du bist so gut, du bekommst ein Goodie!</h2>
-            <div class="calculation-questions calcquestion__one" data-question-id-price="1">
-              <p>Wie viele Masken gibt es im Projekt?</p>
-              <div class="options">
-                <label>
-                  <input type="radio" name="question1" value="option1" data-question-id-price="1"/>Circa 5
-                </label>
-                <label>
-                  <input type="radio" name="question1" value="option2" data-question-id-price="1"/>Circa 10
-                </label>
-                <label>
-                  <input type="radio" name="question1" value="option3" data-question-id-price="1"/>Circa 20
-                </label>
-              </div>
-            </div>
-            <div class="calculation-questions calcquestion__two" data-question-id-price="2">
-              <p>Hast du schon ein Design?</p>
-              <div class="options">
-                <label>
-                  <input type="radio" name="calcquestion2" value="option1" data-question-id-price="2"/>Nein bitte mitabschätzen
-                </label>
-                <label>
-                  <input type="radio" name="calcquestion2" value="option2" data-question-id-price="2"/>Ja, muss nicht eingepreist sein
-                </label>
-              </div>
-            </div>
-            <div class="calculation-questions calcquestion__three" data-question-id-price="3">
-              <p>Brauchst du Schnittstellen?</p>
-              <div class="options">
-                <label>
-                  <input type="radio" name="calcquestion3" value="option1" data-question-id-price="3"/>Nein
-                </label>
-                <label>
-                  <input type="radio" name="calcquestion3" value="option2" data-question-id-price="3"/>Ja, circa eine
-                </label>
-                <label>
-                  <input type="radio" name="calcquestion3" value="option3" data-question-id-price="3"/>Ja, circa drei
-                </label>
-                <label>
-                  <input type="radio" name="calcquestion3" value="option4" data-question-id-price="3"/>Ja, fünf oder mehr
-                </label>
-              </div>
-            </div>
-            <div class="calculation-questions calcquestion__four" data-question-id-price="4">
-              <p>Brauchst du Accessibility-Stuff?</p>
-              <div class="options">
-                <label>
-                  <input type="radio" name="calcquestion4" value="option1" data-question-id-price="4"/>Nein
-                </label>
-                <label>
-                  <input type="radio" name="calcquestion4" value="option2" data-question-id-price="4"/>Ja, AA
-                </label>
-                <label>
-                  <input type="radio" name="calcquestion4" value="option3" data-question-id-price="4"/>Ja, AAA
-                </label>
-              </div>
-            </div>
-            <button onClick={handleCalculationAgile}>Preisberechnung</button>
-            <div id="priceresult"></div>
-          </div>
+          
+          <PriceCalculator/>
+
           <div class="section__five" id="extrabonus">
             <h2>Du hast auch den Bonus richtig beantwortet, super! </h2>
             <div class="section__fivewrapp">
