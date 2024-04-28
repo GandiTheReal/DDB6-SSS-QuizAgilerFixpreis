@@ -1,0 +1,48 @@
+.video {
+    height: 700px;
+    @media (max-width: 767px){
+        height: 300px;
+    }
+}
+
+.header__h1wrapp {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  
+  .section__one p {
+    font-size: 1.5em;
+    letter-spacing: 2px;
+    padding: 20px 0px;
+    text-align: center;
+    animation: slideIn 1s ease;
+    @media (max-width: 767px){
+      font-size: 1em;
+    }
+  }
+  
+  
+  table {
+    margin-top: 40px;
+    width: 100%;
+    font-size: 2.5em;
+    background: #ecf0f1;
+    padding: 30px 0px 47px 0px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: 900;
+    @media (max-width: 767px){
+      font-size: 1em;
+      padding: 10px 0px 10px 0px;
+    }
+  }
+  
+  .green {
+    color: rgb(4, 99, 4);
+  }
+  
+  .red {
+    color: rgb(145, 37, 37);
+  }
+  

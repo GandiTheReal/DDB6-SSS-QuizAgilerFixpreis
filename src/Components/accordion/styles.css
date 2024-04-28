@@ -1,0 +1,36 @@
+.accordion {
+    background-color: #505750c9;
+    color: white;
+    font-size: 2em;
+    letter-spacing: 3px;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+
+.accordion-title {
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 20px;
+    font-size: 3em;
+    color: #4f564f;
+}
+.active,
+.accordion:hover {
+    background-color: #505750c9;
+}
+
+.panel p {
+    letter-spacing: 3px;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    display: none;
+    overflow: hidden;
+}

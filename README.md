@@ -1,6 +1,26 @@
+## Installationsanleitung:
+1) Herunterladen des Codes von https://github.com/GandiTheReal/DDB6-SSS-QuizAgilerFixpreis
+2) Öffnen in einem Code-Editor der Wahl 
+3) Öffnen des Terminals im Editor im selben Folder 
+4) Ausführen von "npm install" im Terminal 
+5) Ausführen von "npm start" im Terminal
+6) Sicherstellen, dass der Port frei ist 
+7) Weitere Infos finden sich direkt unten im offiziellen React-Readme
+
+## Known Issues
+1) Adblock-Extensions können Fehlermeldungen hervorrufen, z.b "ERR_BLOCKED_BY_CLIENT" für Google Ads
+2) Ein Warning ("Error with Permissions-Policy header: Unrecognized feature: 'ch-ua-form-factor'.") kommt direkt von YouTube bei der Einbettung vom Video (Stackoverflow-Erklärung: https://stackoverflow.com/questions/76313405/iframe-error-with-ch-ua-form-factor-cookie-permission)
+
+## Notes
+1) Auswahl beim Quiz ist 1erste Antwort > zweite Antwort > dritte Antwort für alle Punkte 
+2) Ab 60% bekommt man den Fixpreiskalkulator
+3) Bei richtiger Beantwortung der Bonus-Frage bekommt man einen "Vertrag" zu Ausdrucken
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+
 
 ## Available Scripts
 
