@@ -1,4 +1,4 @@
-##Title 
+#Title 
 React-Based Agile Fixprice Quiz
 
 ##Author
@@ -24,21 +24,22 @@ Goodie two is a contract-printer that allows the user to input their company nam
 
 
 ## Known Issues
-1) Adblock-Extensions können Fehlermeldungen hervorrufen, z.b "ERR_BLOCKED_BY_CLIENT" für Google Ads
-2) Ein Warning ("Error with Permissions-Policy header: Unrecognized feature: 'ch-ua-form-factor'.") kommt direkt von YouTube bei der Einbettung vom Video (Stackoverflow-Erklärung: https://stackoverflow.com/questions/76313405/iframe-error-with-ch-ua-form-factor-cookie-permission)
+1) Adblock-Extensions can create error-messages (example: "ERR_BLOCKED_BY_CLIENT" for Google Ads)
+2) A warning ("Error with Permissions-Policy header: Unrecognized feature: 'ch-ua-form-factor'.") comes direct from YouTube for the embedding of the video and should be ignored (Stackoverflow-Explanation: https://stackoverflow.com/questions/76313405/iframe-error-with-ch-ua-form-factor-cookie-permission)
 
 ## Tested Browsers
-1) Google Chrome
-2) Mozilla Firefox
+1) Google Chrome (Version 124.0.6367.61)
+2) Mozilla Firefox (Version 125.0.2)
+3) Microsoft Edge (Version 124.0.2478.51)
 
 ## Learnings
 My main learning was, that trying to write all code in the main .js-file first and splitting it in components later is creating quite some overhead. Also, that while StackOverflow is a great source of information, code/etc from there has to be double checked and refactored before 
 Additionally i learned how to open new pages / work with Routers 
 
 ## Additional Notes
-1) Auswahl beim Quiz ist 1erste Antwort > zweite Antwort > dritte Antwort für alle Punkte 
-2) Ab 60% bekommt man den Fixpreiskalkulator
-3) Bei richtiger Beantwortung der Bonus-Frage bekommt man einen "Vertrag" zu Ausdrucken
+1) Selection for max points in the Quiz is first answer > second answer > third answer 
+2) 60% and above shows the price-calculator 
+3) If the bonus-question is answered correctly, a "contract" is created for printing 
 
 # Getting Started with Create React App
 
